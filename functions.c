@@ -37,21 +37,16 @@ int print_char(va_list types, char buffer[],
  */
 
 int print_string(va_list types, char buffer[],
-
 	int flags, int width, int precision, int size)
 
 {
-
 	int length = 0, i;
-
 	char *str = va_arg(types, char *);
 
 
 
 	UNUSED(buffer);
-
 	UNUSED(flags);
-
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
@@ -65,7 +60,19 @@ int print_string(va_list types, char buffer[],
 		length++;
 	if (precision >= 0 && precision < length)
 		length = precision;
+<<<<<<< HEAD
 	if (width > length)
+=======
+<<<<<<< HEAD
+=======
+
+
+
+	if (width > length)
+>>>>>>> d5e925fe8e7ab6952aafdf9a25bf7b9548ef57cb
+
+	if (width > length)
+>>>>>>> 4e8b709de35a89a27e9f46540c8a1ff5aa149e7e
 	{
 		if (flags & F_MINUS)
 		{
@@ -101,7 +108,6 @@ int print_percent(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 
 {
-
 	UNUSED(types);
 	UNUSED(buffer);
 	UNUSED(flags);
@@ -109,7 +115,6 @@ int print_percent(va_list types, char buffer[],
 	UNUSED(precision);
 	UNUSED(size);
 	return (write(1, "%%", 1));
-
 }
 
 /************************* PRINT INT *************************/
@@ -135,27 +140,49 @@ int print_int(va_list types, char buffer[],
 	unsigned long int num;
 
 	n = convert_size_number(n, size);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e8b709de35a89a27e9f46540c8a1ff5aa149e7e
 	if (n == 0)
 		buffer[i--] = '0';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e8b709de35a89a27e9f46540c8a1ff5aa149e7e
 	buffer[BUFF_SIZE - 1] = '\0';
 	num = (unsigned long int)n;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e8b709de35a89a27e9f46540c8a1ff5aa149e7e
 	if (n < 0)
 	{
 		num = (unsigned long int)((-1) * n);
 		is_negative = 1;
 	}
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e8b709de35a89a27e9f46540c8a1ff5aa149e7e
 	while (num > 0)
 	{
 		buffer[i--] = (num % 10) + '0';
 		num /= 10;
 	}
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4e8b709de35a89a27e9f46540c8a1ff5aa149e7e
 	i++;
 
 	return (write_number(is_negative, i, buffer, flags, width, precision, size));
-
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e8b709de35a89a27e9f46540c8a1ff5aa149e7e
 /************************* PRINT BINARY *************************/
 /**
  * print_binary-Prints an unsigned number
@@ -173,7 +200,6 @@ int print_binary(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 
 {
-
 	unsigned int n, m, i, sum;
 	unsigned int a[32];
 	int count;
@@ -198,10 +224,13 @@ int print_binary(va_list types, char buffer[],
 		if (sum || i == 31)
 		{
 			char z = '0' + a[i];
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4e8b709de35a89a27e9f46540c8a1ff5aa149e7e
 			write(1, &z, 1);
 			count++;
 		}
 	}
 	return (count);
 }
-
