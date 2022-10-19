@@ -39,7 +39,6 @@
 
 
 /**
-<<<<<<< HEAD
  * struct fmt-Struct op
 =======
  * struct fmt - Struct op
@@ -59,12 +58,11 @@ struct fmt
 
 
 /**
-<<<<<<< HEAD
- * typedef struct fmt fmt_t - Struct op
+ * typedef struct fmt fmt_t-Struct op
  *
 =======
  * struct fmt fmt_t - Struct op
->>>>>>> 953934e1a4fea32206c5f2a45e15d2aee6f46fe1
+>>>>>> 953934e1a4fea32206c5f2a45e15d2aee6f46fe1
  * @fmt: The format.
  * @fm_t: The function associated.
  */
@@ -86,7 +84,6 @@ va_list list, char buffer[], int flags, int width, int precision, int size);
 int print_char(va_list types, char buffer[],
 
 	int flags, int width, int precision, int size);
-
 int print_string(va_list types, char buffer[],
 
 	int flags, int width, int precision, int size);
