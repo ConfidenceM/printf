@@ -39,15 +39,10 @@
 
 
 /**
-
- * struct fmt - Struct op
-
+ * struct fmt-Struct op
  *
-
  * @fmt: The format.
-
  * @fn: The function associated.
-
  */
 
 struct fmt
@@ -65,15 +60,10 @@ struct fmt
 
 
 /**
-
  * typedef struct fmt fmt_t - Struct op
-
  *
-
  * @fmt: The format.
-
  * @fm_t: The function associated.
-
  */
 
 typedef struct fmt fmt_t;
@@ -230,5 +220,4 @@ long int convert_size_unsgnd(unsigned long int num, int size);
 
 
 
-#endif /* MAIN_H */
-
+#endif /* MAIN_H *
