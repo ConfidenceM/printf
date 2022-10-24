@@ -8,7 +8,7 @@
 
 
 
-/*
+/**
  * struct print - struct for printer function
  * @type_arg: identifier
  * @f: pointer to a printer functions
