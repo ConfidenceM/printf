@@ -10,17 +10,10 @@
 
 int _printf(const char *format, ...)
 {
-<<<<<<< HEAD
-	int i, printed = 0, printed_chars = 0;
-	int flags, width, precision, size, buff_ind = 0;
-	va_list list;
-	char buffer[ BUFF_SIZE];
-=======
 	unsigned int i = 0, len = 0, ibuf = 0;
 	va_list arguments;
 	int (*function)(va_list, char *, unsigned int);
 	char *buffer;
->>>>>>> 7eb36f94cde0fed8250fb4464721a8ad888cbe4d
 
 	va_start(arguments, format), buffer = malloc(sizeof(char) * 1024);
 	if (!format || !buffer || (format[i] == '%' && !format[i + 1]))
@@ -47,14 +40,13 @@ int _printf(const char *format, ...)
 				{
 					len += function(arguments, buffer, ibuf);
 					i += ev_print_func(format, i + 1);
-				}
-			} i++;
+				}	i++;
+			}
+			else
+				handl_buf(buffer, format[i], ibuf), len++;
+			for (ibuf = len; ibuf > 1024; ibuf -= 1024)
+				;
 		}
-		else
-			handl_buf(buffer, format[i], ibuf), len++;
-		for (ibuf = len; ibuf > 1024; ibuf -= 1024)
-			;
-	}
-	print_buf(buffer, ibuf), free(buffer), va_end(arguments);
-	return (len);
+		print_buf(buffer, ibuf), free(buffer), va_end(arguments);
+		return (len);
 }
