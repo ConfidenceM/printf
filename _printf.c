@@ -39,14 +39,15 @@ int _printf(const char *format, ...)
 				else
 				{
 					len += function(arguments, buffer, ibuf);
-					i += ev_print_func(format, i + 1);
-				}	i++;
-			}
-			else
-				handl_buf(buffer, format[i], ibuf), len++;
-			for (ibuf = len; ibuf > 1024; ibuf -= 1024)
-				;
+					i += print_func(format, i + 1);
+				}
+			}	i++;
 		}
-		print_buf(buffer, ibuf), free(buffer), va_end(arguments);
-		return (len);
+		else
+			handl_buf(buffer, format[i], ibuf), len++;
+		for (ibuf = len; ibuf > 1024; ibuf -= 1024)
+			;
+	}
+	print_buf(buffer, ibuf), free(buffer), va_end(arguments);
+	return (len);
 }
